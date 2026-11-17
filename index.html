@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chatbot Bien-être 🌿</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="chat-container">
+  <div class="chat-header">
+    <div class="avatar">🌿</div>
+    <div class="header-info">
+      <h1>Chatbot Bien-être 🌿</h1>
+      <p><span class="status-dot"></span>En ligne · Écoute & Soutien émotionnel</p>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="weatherBtn" title="Météo">🌤</button>
+      <button class="icon-btn" id="breathBtn" title="Respiration">🫁</button>
+      <button class="icon-btn" id="moodBtn" title="Suivi d'humeur">📈</button>
+      <button class="icon-btn" id="voiceBtn" title="Lecture vocale">🔇</button>
+      <button class="icon-btn" id="themeBtn" title="Mode sombre">🌙</button>
+    </div>
+  </div>
+
+  <div class="messages" id="messages" aria-live="polite"></div>
+
+  <div class="quick-replies" id="quickReplies">
+    <button class="quick-reply" data-q="je suis stressé">😰 Stressé(e)</button>
+    <button class="quick-reply" data-q="je suis triste">😢 Triste</button>
+    <button class="quick-reply" data-q="je suis heureux">😊 Heureux/se</button>
+    <button class="quick-reply" data-q="je me sens seul">🌧 Seul(e)</button>
+    <button class="quick-reply" data-q="j'ai peur">😨 Anxieux/se</button>
+    <button class="quick-reply" data-q="je suis en colère">😤 En colère</button>
+  </div>
+
+  <div class="input-area">
+    <textarea id="userInput" placeholder="Écris ton message ici…" rows="1"></textarea>
+    <button class="btn" id="micBtn" title="Parler">🎤</button>
+    <button class="btn" id="clearBtn" title="Nouvelle conversation">🗑</button>
+    <button class="btn" id="sendBtn" title="Envoyer">➤</button>
+  </div>
+  <div class="powered">Soutien complémentaire uniquement · Ne remplace pas un professionnel de santé mentale</div>
+
+  <div class="panel" id="breathPanel">
+    <button class="close-btn" data-close aria-label="Fermer">×</button>
+    <h2>Respiration guidée</h2>
+    <div class="breath-circle" id="breathCircle">Prêt ?</div>
+    <p id="breathText">Inspire 4 s, expire 6 s. 5 cycles.</p>
+    <button class="quick-reply" id="breathStart">Commencer</button>
+  </div>
+
+  <div class="panel" id="moodPanel">
+    <button class="close-btn" data-close aria-label="Fermer">×</button>
+    <h2>Comment tu te sens ?</h2>
+    <div class="mood-row" id="moodRow">
+      <button data-m="1">😞</button><button data-m="2">😕</button><button data-m="3">😐</button><button data-m="4">🙂</button><button data-m="5">😄</button>
+    </div>
+    <p id="moodMsg">Tes 14 dernières entrées :</p>
+    <div class="mood-chart" id="moodChart"></div>
+  </div>
+</div>
+<script src="kb.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
